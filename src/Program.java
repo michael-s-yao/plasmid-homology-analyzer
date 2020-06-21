@@ -169,6 +169,11 @@ public class Program {
     public String testHomology() {
         StringBuilder retString = new StringBuilder();
 
+        if (this.sort().keySet().isEmpty()) {
+            retString.append("No sites of potential homology were found.");
+            return retString.toString();
+        }
+
         for (ArrayList<Integer> set : this.sort().keySet()) {
             retString.append("GROUP: <br><br>");
 
